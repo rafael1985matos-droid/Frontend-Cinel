@@ -1,0 +1,78 @@
+/* You can add global styles to this file, and also import other style files */
+h4 {
+    color: rgb(24, 212, 96);
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-flexbox;
+}
+
+h2 {
+    color: rgb(24, 212, 96);
+    background-color: rgb(12, 83, 110);
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-flex;
+}
+
+h6 {
+    color: rgb(24, 212, 96);
+    background-color: rgb(12, 83, 110);
+    padding: 15px;
+    border-radius: 12px;
+    display: inline-flex;
+}
+
+h1 {
+    color: rgb(24, 212, 96);
+    
+    padding: 15px;
+    border-radius: 12px;
+   
+}
+
+
+ .texto-destaque {
+
+
+    color: rgb(24, 212, 96);
+     font-size: 20px;
+     background-color: rgb(246, 249, 250);;
+     font-family: Arial, Helvetica, sans-serif;
+     text-align: center;
+     text-decoration: underline;
+     text-transform: uppercase;
+     text-shadow: 2px 2px 4px rgb(12, 83, 110);
+     letter-spacing: 1px;
+     word-spacing: 4px;
+     line-height: 1.5;
+     text-indent: 50px;
+    
+}  
+
+.container-img {
+        
+    display: flex-box;    
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+table {
+    width: 350px;
+    height: auto;
+    justify-items: auto;
+    line-clamp: unset;  
+    letter-spacing: normal;
+    line-height: 20px;  
+    grid-template-columns: auto auto auto;
+    box-sizing: border-box;
+    border-radius: 23px;
+    -webkit-border-image: auto;
+    border: 1px solid rgb(12, 83, 110);
+    border-collapse: collapse;
+    margin-top: 100px;
+}      
