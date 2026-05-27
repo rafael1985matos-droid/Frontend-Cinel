@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 })
 export class Avatar {
 
-    nome: string = "Rafael";
+    localnome: string = "Rafael";
+    localImage: string = "";
   //  nome2: string = `20`;
   //  nome3: string = 'true';
 
