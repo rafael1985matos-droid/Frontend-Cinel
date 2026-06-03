@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class Avatar {
 
     localnome: string = "Rafael";
-    localImage!: string ;
+    localImage!: string; ;
   //  nome2: string = `20`;
   //  nome3: string = 'true';
 
