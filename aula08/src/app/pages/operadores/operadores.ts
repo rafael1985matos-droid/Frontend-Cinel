@@ -36,9 +36,9 @@ export class Operadores {
   localTernario: string = "localName = this.Cursos ? 'curso de java': 'curso de JS'";
 
   constructor() {
-    let exemploNumber = 10;
+    let exemploNumber = 10; //aqui tenho 10
     /// Quanto tem na variavel exemploNumber ????
-    this.exemploNumber += 20;
+    this.exemploNumber += 20; //aqui tenho 30
 
     let localTernario = exemploNumber ? 50 : 100;
     /** Ternario permite fazer uma pre checagem, exemplo abaixo onde se na 
