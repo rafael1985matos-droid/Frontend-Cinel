@@ -1,0 +1,8 @@
+<div class="avatar-container">
+  <img [src]="this?.localImage ?? '/img/avatar.png'" alt="Imagem do avatar" class="avatar" />
+  <!-- property bind, interpolação -->
+  <span class="name">{{ this.localnome }}</span>
+  <!-- evento de click -->
+  <button (click)="logout()">SignOut</button>
+  <!-- <button (mauser)="logout()">Test</button> -->
+</div>
