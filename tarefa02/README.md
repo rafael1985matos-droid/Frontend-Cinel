@@ -16,5 +16,5 @@ firebase init
 # fazer o ng construir
 ng build
 
-# implantar do firebase
+# deploy do firebase
 implantação do Firebase
