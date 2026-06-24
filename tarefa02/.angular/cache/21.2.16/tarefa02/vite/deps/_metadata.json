@@ -1,0 +1,58 @@
+{
+  "hash": "6c7ca43a",
+  "configHash": "df71e39e",
+  "lockfileHash": "2ac02dc4",
+  "browserHash": "b830acd0",
+  "optimized": {
+    "@angular/common": {
+      "src": "../../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "fbe40fe1",
+      "needsInterop": false
+    },
+    "@angular/core": {
+      "src": "../../../../../../node_modules/@angular/core/fesm2022/core.mjs",
+      "file": "@angular_core.js",
+      "fileHash": "37c01e36",
+      "needsInterop": false
+    },
+    "@angular/platform-browser": {
+      "src": "../../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
+      "file": "@angular_platform-browser.js",
+      "fileHash": "0473f2a5",
+      "needsInterop": false
+    },
+    "@angular/router": {
+      "src": "../../../../../../node_modules/@angular/router/fesm2022/router.mjs",
+      "file": "@angular_router.js",
+      "fileHash": "59bde588",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../../../../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "7d3f9c9c",
+      "needsInterop": false
+    },
+    "luxon": {
+      "src": "../../../../../../node_modules/luxon/build/es6/luxon.mjs",
+      "file": "luxon.js",
+      "fileHash": "916578a6",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-UKCROT6N": {
+      "file": "chunk-UKCROT6N.js"
+    },
+    "chunk-T56KUTIB": {
+      "file": "chunk-T56KUTIB.js"
+    },
+    "chunk-JXU4QNIP": {
+      "file": "chunk-JXU4QNIP.js"
+    },
+    "chunk-GOMI4DH3": {
+      "file": "chunk-GOMI4DH3.js"
+    }
+  }
+}
