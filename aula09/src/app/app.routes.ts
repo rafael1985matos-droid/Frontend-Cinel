@@ -5,22 +5,26 @@ export const routes: Routes = [
   {
     path: 'ebook/interpolacao',
     loadComponent: () =>
-      import('./pages/interpolacao/interpolacao').then((ana) => ana.Interpolacao),
+      import('./pages/interpolacao/interpolacao').then((c) => c.Interpolacao),
   },
   {
     path: 'ebook/interfaces',
     loadComponent: () =>
-      import('./pages/interfaces/interfaces').then((rafael) => rafael.Interfaces),
+      import('./pages/interfaces/interfaces').then((c) => c.Interfaces),
   },
     {
     path: 'ebook/poo',
     loadComponent: () =>
-      import('./pages/poo/poo').then((paulo) => paulo.Poo),
+      import('./pages/poo/poo').then((c) => c.Poo),
   },
        {
     path: 'ebook/functions',
     loadComponent: () =>
-      import('./pages/functions/functions').then((paulo) => paulo.Functions),
+      import('./pages/functions/functions').then((c) => c.Functions),
+  },
+  {path: 'ebook/typescript', 
+    loadComponent: () => 
+    import('./pages/typescript/typescript').then((c) => c.Typescript),
   },
   {
     path: '**',
