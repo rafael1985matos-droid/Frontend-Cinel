@@ -17,44 +17,65 @@ export class AssyncTables {
   localUserPromise: IUtilizadores[] = [];
 
   ///utilizador com assync await
-  //localUserAssyncPromise: IUtilizadores[] = [];
+  localUserAssyncPromise: IUtilizadores[] = [];
 
   ///utilizador com Observable
-  //localUserObservable$: Observable<IUtilizadores[]>;
+  localUserObservable$: Observable<IUtilizadores[]>;
 
   /// criação das variaveis de error
   errorPromise: LocalError = { errorAssync: false, errorNome: '' };
-  //errorAssyncAwaitPromise: LocalError = { errorAssync: false, errorNome: '' };
-  //errorObservable: LocalError = { errorAssync: false, errorNome: '' };
+  errorAssyncAwaitPromise: LocalError = { errorAssync: false, errorNome: '' };
+  errorObservable: LocalError = { errorAssync: false, errorNome: '' };
 
   ///falaremos sobre DI ou Injeção de Dependência
 
   constructor(
-    protected fakeBack: FakeBack, 
+    protected fakeBack: FakeBack,
     private cdr: ChangeDetectorRef,
   ) {
-    //this.localUserObservable$ = fakeBack.getUtilizadoresOservable();
+    this.localUserObservable$ = fakeBack.getUtilizadoresOservable();
 
     ///invocando o metodo de Promise
     this.carregarPromise();
+    //invocando o 2º metodo de promise
+    this.carregarAssyncAwaitPromise();
   }
 
   carregarPromise = () => {
     this.fakeBack
       .getUtilizadoresPromise()
       .then((res: IUtilizadores[]) => {
-      // console.log('Nosso Result:', res);
-      this.cdr.detectChanges();
-      return (this.localUserPromise = res);
+        // console.log('Nosso Result:', res);
+        this.cdr.detectChanges();
+        return (this.localUserPromise = res);
       })
       .catch((e) => {
-      // console.error('Nosso Error:', e);
+        // console.error('Nosso Error:', e);
         this.errorPromise = { errorAssync: true, errorNome: 'Error no carregarPromise():' + e };
         this.localUserPromise = [];
       });
   };
 
-  carregarAssyncAwaitPromise() {}
+  /** ASYNC & AWAIT
+   *
+   */
 
-  carregarObservable = () => {};
+  carregarAssyncAwaitPromise() {
+    this.fakeBack
+      .getUtilizadoresAsync()
+      .then((res: IUtilizadores[]) => {
+        console.log('Nosso Result:', res);
+        this.localUserAssyncPromise = res;
+      })
+      .catch((error) => {
+        console.error('Nosso Error em carregarAsyncAwaitPromise:', error);
+        this.localUserAssyncPromise = [];
+        this.errorAssyncAwaitPromise = {
+          errorAssync: true,
+          errorNome: 'Error no carregarAsyncAwaitPromise(): ' + error,
+        };
+      });
+  }
+
+  // carregarObservable = () => {};
 } ///endclass
