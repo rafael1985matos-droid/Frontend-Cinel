@@ -49,7 +49,7 @@ export class Forms {
     console.log(
       'Dados do formulario passados individualmente: Email: ${localFormEmail} e Password: ${localFormPassword}',
     );
-    console.log('Objeto: formulariocomplet: ${localFormsComplete}');
+    console.log('Objeto: formulariocomplet: ${ jSON.stringify(localFormsComplete)}');
   }
 
   goBack = () => {
