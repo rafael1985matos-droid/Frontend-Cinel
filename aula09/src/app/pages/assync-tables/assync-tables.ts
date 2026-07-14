@@ -1,5 +1,5 @@
 import { FakeBack } from './../../service/fake-back';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of, switchMap, take } from 'rxjs';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { IUtilizadores } from '../../shared/i-utilizadores';
 import { CommonModule } from '@angular/common';
@@ -21,6 +21,8 @@ export class AssyncTables {
 
   ///utilizador com Observable
   localUserObservable$: Observable<IUtilizadores[]>;
+  
+  localUserSubscrition: IUtilizadores[] = [];
 
   /// criação das variaveis de error
   errorPromise: LocalError = { errorAssync: false, errorNome: '' };
@@ -39,6 +41,11 @@ export class AssyncTables {
     this.carregarPromise();
     //invocando o 2º metodo de promise
     this.carregarAssyncAwaitPromise();
+
+    ///invocando o metodo Observable
+    this.carregarObservable();
+
+    //this.cdr.detectChanges();
   }
 
   carregarPromise = () => {
@@ -75,7 +82,42 @@ export class AssyncTables {
           errorNome: 'Error no carregarAsyncAwaitPromise(): ' + error,
         };
       });
-  }
+  };
+  carregarObservable = () => {
+    ///falar um pouco sobre RxJS
+    ///operador take (1), este cara faz com que apos 1 subscrição o canal de dados seja fechado
+    this.fakeBack.getUtilizadoresOservable().pipe(
+      take(1),
+      switchMap((res: IUtilizadores[]) => {
+      console.error('Nosso Result em carregarObservable():', res);
+      this.localUserSubscrition = res;
+      this.cdr.detectChanges();
+      return this.localUserSubscrition;
 
-  // carregarObservable = () => {};
-} ///endclass
+    }), catchError((error) => {
+      console.error('Nosso Error em carregarAsyncAwaitPromise:', error);
+      this.errorObservable = {errorAssync: true, errorNome: "Erro no metodo carregarObservable: " + error};
+      return of([]);
+
+    }),
+  
+  ).subscribe()
+};
+  carregarObservableComSubscribleObjeto = () => {
+    ///falar um pouco sobre RxJS
+    ///operador take (1), este cara faz com que apos 1 subscrição o canal de dados seja fechado
+    this.fakeBack.getUtilizadoresOservable().pipe(
+      take(1),
+      switchMap((res: IUtilizadores[]) => {
+      console.log('arregarObservableComSubscribleObjeto():', res);
+      return res;
+      }),
+
+    ).subscribe({
+      next: (Result) => {console.log("nosso dado: ", Result)},
+      error: (e) => console.log("nosso Erro no metodo carregarObservableComSubscribleObjeto()" + e),
+      complete: () => console.log("nosso complete, terminou o Observable"),
+    });
+  }; 
+    
+  } ///endclass

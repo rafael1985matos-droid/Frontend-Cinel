@@ -16,6 +16,7 @@
           </tr>
         </tbody>
       </table>
+      ng salario
     } @else {
       <table>
         <thead>
@@ -139,13 +140,58 @@
       <table>
         <tbody>
           <tr>
-            <!-- <td class="sem-dados">No Data + {{ this.errorObservable.errorNome }}</td> -->
-            <td class="sem-dados">No Data + {{ this.errorObservable.errorNome }}</td>
+            <td class="sem-dados">Error em carregar Observable com PipeAssync</td>
           </tr>
         </tbody>
       </table>
     }
   </section>
 
-  <!-- Fim da Tabela -->
+  <!-- Inicio -->
+
+  <section class="card">
+    <div class="topo">
+      <h2>Observable com Subscribe</h2>
+      <button (click)="this.carregarObservable()">Carregar Dados</button>
+      
 </div>
+
+  @if (errorObservable.errorAssync) {
+      <table>
+        <tbody>
+          <tr>
+            <td class="sem-dados">No Data + {{ this.errorObservable.errorNome }}</td>
+          </tr>
+        </tbody>
+      </table>
+    } @else {
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Idade</th>
+            <th>Ativo</th>
+            <th>Salario</th>
+            <th>Data de Registro</th>
+            <th>Departamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of this.localUserSubscrition; track $index) {
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.idade }}</td>
+              <td>{{ item.ativo }}</td>
+              <td>{{ item.salario }}</td>
+              <td>{{ item.dataRegistro | date }}</td>
+              <td>{{ item.departamento }}</td>
+            </tr>
+          }
+          <!-- Fim do for -->
+        </tbody>
+      </table>
+    }
+
+
