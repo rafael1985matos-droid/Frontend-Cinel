@@ -20,6 +20,7 @@ import { tick } from '@angular/core/testing';
   styleUrl: './forms.css',
 })
 export class Forms {
+signInForms: any;
   goback() {
     throw new Error('Method not implemented.');
   }
@@ -36,6 +37,8 @@ export class Forms {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]],
     });
+    /**O controls e a api do form que controla os validators e tb  */
+    console.log("nosso controls: ", this.signinForms.controls);
   }
 
   onSubmit() {
