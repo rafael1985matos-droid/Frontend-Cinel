@@ -1,0 +1,142 @@
+.table-container {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.table-header {
+  margin-bottom: 30px;
+}
+
+.table-header h2 {
+  font-size: 2rem;
+  color: #1e293b;
+  margin: 10px 0;
+}
+
+.table-header p {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.promise-tag {
+  background-color: #ea580c; /* Laranja para diferenciar das telas de Observable */
+  color: #ffffff;
+}
+
+/* Estrutura da Tabela */
+.table-responsive {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #f8f9fa;
+  color: #475569;
+  padding: 16px;
+  font-weight: 600;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.custom-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.project-title {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.code-tech {
+  background-color: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #0f172a;
+}
+
+.approach-mark {
+  background-color: #ffedd5;
+  color: #9a3412;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Badges de Status */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-badge[data-status="Concluído"] {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge[data-status="Em Progresso"] {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-badge[data-status="Pendente"] {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Loaders e Erros */
+.loading-state {
+  text-align: center;
+  padding: 60px 0;
+  color: #64748b;
+}
+
+.error-state {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #fca5a5;
+  text-align: center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #ea580c;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

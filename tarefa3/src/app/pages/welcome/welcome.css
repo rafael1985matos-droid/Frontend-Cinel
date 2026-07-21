@@ -1,0 +1,174 @@
+/* Container Principal */
+.welcome-container {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  color: #333333;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Seção Hero (Banner Inicial) */
+.hero-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin: 15px 0;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #dd0031; /* Vermelho característico do Angular */
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Grid de Cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* Estilização dos Cards */
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 35px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  color: #1e293b;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Listas internas dos Cards */
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.card-list li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.card-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Botões */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #dd0031;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #b80028;
+}
+
+.btn-secondary {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #0369a1;
+}
+
+code {
+  background-color: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #0f172a;
+}
+
+/* Rodapé */
+.tech-footer {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 20px;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}

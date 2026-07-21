@@ -1,0 +1,48 @@
+<div class="table-container">
+  <header class="table-header">
+    <div class="tech-tag promise-tag">JS Async / Await</div>
+    <h2>Promise com Async e Await</h2>
+    <p>Sintaxe moderna e limpa. O código assíncrono é escrito de forma sequencial com tratamento de erros robusto via blocos try/catch.</p>
+  </header>
+
+  @if (carregando) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Aguardando a resolução da Promise com await...</p>
+    </div>
+  } @else if (erro) {
+    <div class="error-state">
+      <p>⚠️ {{ erro }}</p>
+    </div>
+  } @else {
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título do Projeto</th>
+            <th>Tecnologia</th>
+            <th>Abordagem</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of projetos; track item.id) {
+            <tr>
+              <td>{{ item.id }}</td>
+              <td><span class="project-title">{{ item.titulo }}</span></td>
+              <td><code class="code-tech">{{ item.id }}</code></td>
+              <td><mark class="approach-mark">{{ item.tipoAssincrono }}</mark></td>
+              <td>
+                <span class="status-badge" [attr.data-status]="item.status">
+                  {{ item.status }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+

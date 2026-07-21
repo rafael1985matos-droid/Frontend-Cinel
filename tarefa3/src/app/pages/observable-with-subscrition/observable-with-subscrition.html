@@ -1,0 +1,45 @@
+<div class="table-container">
+  <header class="table-header">
+    <div class="tech-tag sub-tag">RxJS Manual Subscribe</div>
+    <h2>Observable com Inscrição Manual (.subscribe)</h2>
+    <p>Abordagem tradicional. Os dados são extraídos no TypeScript e exigem gerenciamento manual do ciclo de vida da inscrição.</p>
+  </header>
+
+  @if (carregando) {
+    <!-- Estado de carregamento controlado pela variável booleana do .ts -->
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Aguardando resposta do stream manual...</p>
+    </div>
+  } @else {
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título do Projeto</th>
+            <th>Tecnologia</th>
+            <th>Abordagem</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of projetos; track item.id) {
+            <tr>
+              <td>{{ item.id }}</td>
+              <td><span class="project-title">{{ item.titulo }}</span></td>
+              <td><code class="code-tech">{{ item.id}}</code></td>
+              <td><mark class="approach-mark">{{ item.tipoAssincrono }}</mark></td>
+              <td>
+                <span class="status-badge" [attr.data-status]="item.status">
+                  {{ item.status }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+

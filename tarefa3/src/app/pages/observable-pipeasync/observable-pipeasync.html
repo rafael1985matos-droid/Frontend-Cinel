@@ -1,0 +1,46 @@
+<div class="table-container">
+  <header class="table-header">
+    <div class="tech-tag rx-tag">RxJS Stream</div>
+    <h2>Observable com Pipe Async</h2>
+    <p>Renderização reativa e segura. O Angular gerencia a inscrição e previne vazamento de memória automaticamente.</p>
+  </header>
+
+  <!-- O pipe async resolve o stream e injeta os dados na variável local 'projetos' -->
+  @if (projetos$ | async; as projetos) {
+    <div class="table-responsive">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Título do Projeto</th>
+            <th>Id</th>
+            <th>Abordagem</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of projetos; track item.id) {
+            <tr>
+              <td>{{ item.id }}</td>
+              <td><span class="project-title">{{ item.titulo }}</span></td>
+              <td><code class="code-tech">{{ item.id }}</code></td>
+              <td><mark class="approach-mark">{{ item.tipoAssincrono }}</mark></td>
+              <td>
+                <span class="status-badge" [attr.data-status]="item.status">
+                  {{ item.status }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <!-- Estado exibido enquanto o delay(1200) do SandBoxService não é concluído -->
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Escutando fluxo de dados do Observable...</p>
+    </div>
+  }
+</div>
+
