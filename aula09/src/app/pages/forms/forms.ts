@@ -20,6 +20,7 @@ import { tick } from '@angular/core/testing';
   styleUrl: './forms.css',
 })
 export class Forms {
+
 signInForms: any;
   goback() {
     throw new Error('Method not implemented.');
@@ -59,4 +60,15 @@ signInForms: any;
     this.signinForms.reset();
     this.Router.navigateByUrl('/');
   };
+gmailAuthentication() {
+  this.AuthService.loginWithGoogle().subscribe(
+    {
+      next: (res) => console.log("Meu result from Firebase Authentication", res),
+      error: (e) => {
+        console.error("nosso erro do firebase auth", e), this.goBack;
+      },
+    }
+  );
+}
+
 } //end class
