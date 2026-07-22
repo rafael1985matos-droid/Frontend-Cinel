@@ -70,5 +70,8 @@ gmailAuthentication() {
     }
   );
 }
-
+resetForms(){
+  console.log("resetando forms");
+this.signinForms.reset();
+}
 } //end class

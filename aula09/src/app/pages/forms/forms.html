@@ -2,7 +2,7 @@
   <h2>SignIn</h2>
   <p>Favor SignIn o Forms</p>
 
-  <button class="clean-button" (click)="this.signinForms.reset()">Reset Formulário</button>
+  <button class="clean-button" (click)="resetForms()">Reset Formulário</button>
 
   <!-- criação do formulario -->
   <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
@@ -13,10 +13,10 @@
       id="email"
       name="email"
       placeholder="Digite seu E-mail"
-      formControlName="E-mail"
+      formControlName="email"
     />
     <!-- inicio das validações -->
-    @if (this.signInForms.invalid && this.signInForms.get('email')?.touched) {
+    @if (this.signInForms?.invalid && this.signInForms.get('email')?.touched) {
       <!-- NgClass é uma das diretivas, ela cuida de injetar uma classe de CSS no template caso haja uma booleano true -->
       <div
         [ngClass]="{
@@ -50,7 +50,7 @@
       placeholder="Digite seu password mínimo de 6 máximo de 10"
     />
 
-    @if (this.signInForms.invalid && this.signInForms.get('password')?.touched) {
+    @if (this.signInForms?.invalid && this.signInForms.get('password')?.touched) {
       <div
         [ngClass]="{
           'error-message':
@@ -94,13 +94,17 @@
       <button
         class="sign-in"
         type="submit"
-        [disabled]="this.signInForms.invalid && this.signInForms.touched"
+        [disabled]="this.signInForms?.invalid && this.signInForms.touched"
       >
         Signin
       </button>
     </div>
     <!-- botão para google -->
-     <button class="google-btn" type="button" (click)="gmailAuthentication()">
+     <button class="google-btn" 
+     type="button" 
+     (click)="gmailAuthentication()" 
+     [disabled]="this.signInForms?.invalid && this.signInForms.touched"
+     >
       <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">  
       SignIn With Google    
     
