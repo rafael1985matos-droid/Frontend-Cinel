@@ -30,7 +30,7 @@ signInForms: any;
   protected signinForms: UntypedFormGroup;
 
   constructor(
-    protected AuthService: AuthStateService,
+    protected authService: AuthStateService,
     protected Router: Router,
     private fb: UntypedFormBuilder,
   ) {
@@ -61,7 +61,7 @@ signInForms: any;
     this.Router.navigateByUrl('/');
   };
 gmailAuthentication() {
-  this.AuthService.loginWithGoogle().subscribe(
+  this.authService.loginWithGoogle().subscribe(
     {
       next: (res) => console.log("Meu result from Firebase Authentication", res),
       error: (e) => {

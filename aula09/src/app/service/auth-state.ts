@@ -51,7 +51,7 @@ Aqui está o que ele faz em detalhe:
   iniAuthListener(): void {
     runInInjectionContext(this.environmentInjector, () => {
       onAuthStateChanged(this.Auth, (user: User | null) => {
-        this.user$.next(null);
+        this.user$.next(user);
       });
     });
   }

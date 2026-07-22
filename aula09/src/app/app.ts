@@ -28,7 +28,7 @@ export class App implements OnInit {
     /**Forma de teste de dados  */
     this.AuthStateService.getUser().subscribe({
       next: (result) => {
-        console.log("Nosso Resut do Gppgle no App.ts: ", result)
+        console.log("Nosso Resut do Google no App.ts: ", result)
       },
       error: (error) => {
         console.error("Nosso Error no Auth do Firebase no App.ts: ", error)

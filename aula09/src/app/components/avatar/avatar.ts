@@ -12,14 +12,12 @@ import { CommonModule } from '@angular/common';
 export class Avatar {
  // localnome: string = 'Rafael';
   //localImage!: string;
-//localUserComponentFilho = input<User>();
+  localUserComponentFilho = input<User>();
   private localService = inject(AuthStateService);
-  localUser$ = this.localService.getUser();
+ // localUser$ = this.localService.getUser();
 
   ///@Input("nome da variável") e @OutPut("nome do método ou propriedade")
-  constructor(){
-   
-  }
+ 
 
   logout() {
     this.localService.logout();

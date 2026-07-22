@@ -6,8 +6,8 @@
       <a routerLink="/forms">Forms</a>
     </div>
     <!-- nossa tag avatar-->      
-      <!-- @if (this.localUser$ | async; as user) { -->
-           <app-avatar> </app-avatar>
-    <!-- } -->
+      @if (this.localUser$ | async; as user) {
+           <app-avatar [localUserComponentFilho]="user"> </app-avatar>
+    }
   </nav>
 </header>

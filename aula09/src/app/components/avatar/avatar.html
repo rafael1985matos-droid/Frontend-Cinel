@@ -1,13 +1,19 @@
-@if (this.localUser$ | async; as user) {
+ 
+
+ 
   
   <div class="avatar-container">
-    <img [src]="user?.photoURL ?? '/img/avatar.png' " alt="Imagem do avatar" class="avatar" />
-    <!-- property bind, interpolação -->
-    <span class="name">{{ user?.displayName }}</span>
-    <!-- evento de click -->
+    <img [src]="localUserComponentFilho()?.photoURL ?? '/img/avatar.png' " alt="Imagem do avatar" class="avatar" />
+  
+    <span class="name">{{localUserComponentFilho()?.displayName }}</span>
+   
     <button (click)="logout()">SignOut</button>
-    <!-- <button (mauser)="logout()">Test</button> -->
+ 
   </div>
 
-}
+
+
+
+
+
 
