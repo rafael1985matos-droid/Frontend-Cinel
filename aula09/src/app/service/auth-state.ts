@@ -82,4 +82,10 @@ Aqui está o que ele faz em detalhe:
       }),
     );
   };
+
+  logout = () => {
+    this.user$.next(null);
+    this.Auth.signOut().catch((e) => console.error("Error no Logout do Google", e));
+    this.routes.navigate(['/welcome']);
+  }
 } // fim do service
